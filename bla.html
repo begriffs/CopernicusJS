@@ -30,6 +30,16 @@
         width: 100px;
         height: 100px;
       }
+
+      header {
+        background-color: blue;
+        width: 100%;
+      }
+
+      footer {
+        background-color: green;
+        height: 100%;
+      }
     </style>
   <head>
   <body>
@@ -40,6 +50,14 @@
       </div>
     </nav>
 
+    <header>
+      Hi, I am a header.
+    </header>
+
+    <footer>
+      Bye.
+    </footer>
+
   </body>
 
   <script type='text/javascript' src='http://codeorigin.jquery.com/jquery-2.0.3.min.js'></script>
@@ -48,7 +66,9 @@
     var style = {
       nav: { affinity: 0 },
       'nav > div': { affinity: Math.PI / 2 },
-      'nav > div > div': { affinity: Math.PI }
+      'nav > div > div': { affinity: Math.PI },
+      'header': { affinity: Math.PI / 20 },
+      'footer': { affinity: Math.PI * 3 / 2 }
     };
 
     $(function () {
