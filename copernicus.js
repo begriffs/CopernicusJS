@@ -2,7 +2,7 @@ function redraw () {
   _.each(_.keys(style), function (selector) {
     var specs = _.defaults(
       style[selector],
-      { affinity: 3 * Math.PI / 4 }
+      { gravity: 3 * Math.PI / 4 }
     );
     $(selector).each(function () {
       var elt    = $(this),
@@ -13,8 +13,8 @@ function redraw () {
         p_half_width   = p_width / 2,
         p_half_height  = p_height / 2,
         p_hypotenuse   = Math.sqrt(p_half_width*p_half_width + p_half_height*p_half_height),
-        great_circle_x = p_half_width  + (p_hypotenuse * Math.cos(specs.affinity)),
-        great_circle_y = p_half_height - (p_hypotenuse * Math.sin(specs.affinity)),
+        great_circle_x = p_half_width  + (p_hypotenuse * Math.cos(specs.gravity)),
+        great_circle_y = p_half_height - (p_hypotenuse * Math.sin(specs.gravity)),
 
         new_left       = great_circle_x - elt.width()/2,
         new_top        = great_circle_y - elt.height()/2;
